@@ -1,0 +1,27 @@
+# config.yaml
+# modify the ckpt path
+base_model_path: ... # sdxl
+image_encoder_path: ... # ipadapter_sdxl/image_encoder
+ip_ckpt: ... # ipadapter_sdxl/ip-adapter_sdxl.bin
+
+prompt: "a cinematic portrait"
+style_image: ../Assets/example_style.jpg
+
+negative_prompt: "text, watermark, lowres, low quality, worst quality, deformed, glitch, low contrast, noisy, saturation, blurry"
+ipadapter_scale: 1.0
+guidance_scale: 5
+num_samples: 1
+num_inference_steps: 30
+seed: 42
+target_blocks: ["up_blocks.0.attentions.1"]
+
+hyper:
+  tag: instantstyle
+  encoder_svd: false
+  encoder_cfg: false
+  attn_svd: true
+  attn_cfg: true
+  attn_svd_k: 1
+  attn_svd_alpha: 0.01
+  attn_svd_gamma: 20.0
+  attn_svd_center: 0.3

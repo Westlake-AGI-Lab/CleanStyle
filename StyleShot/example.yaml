@@ -1,0 +1,22 @@
+# example.yaml
+# modify the ckpt path
+base_model_path: ... # sd-v1.5
+transformer_block_path: ... # clip-vit-h-14-laion2b-s32b-b79k
+styleshot_model_path: ... # styleshot
+
+prompt: "a cinematic portrait"
+style_image: ../Assets/example_style.jpg
+
+num_inference_steps: 30
+seed: 42
+
+hyper:
+  encoder_svd: false
+  encoder_cfg: false
+  attn_svd: true
+  attn_cfg: true
+  guidance_scale: 7.5
+  attn_svd_k: 1
+  attn_svd_alpha: 0.01
+  attn_svd_gamma: 20.0
+  attn_svd_center: 0.3
