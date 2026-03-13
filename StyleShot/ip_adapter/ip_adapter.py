@@ -659,7 +659,6 @@ class StyleShot(torch.nn.Module):
 
         style_ip_tokens, uncond_style_ip_tokens = self.get_image_embeds(style_image)
         if encoder_svd:
-            pdb.set_trace()
             # truncation
             # image_prompt_embeds = embedding_truncation(image_prompt_embeds.float(), retain_k=4)
             # exponential
