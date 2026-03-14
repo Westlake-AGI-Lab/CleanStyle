@@ -2,9 +2,9 @@
 # modify the ckpt path
 base_model_path: ... # sd-v1.5
 transformer_block_path: ... # clip-vit-h-14-laion2b-s32b-b79k
-styleshot_model_path: ... # styleshot
+styleshot_model_path:  ... # styleshot
 
-prompt: "a cinematic portrait"
+prompt: "a cute cat"
 style_image: ../Assets/example_style.jpg
 
 num_inference_steps: 30

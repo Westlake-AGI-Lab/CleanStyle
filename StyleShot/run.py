@@ -21,15 +21,15 @@ def main():
         cfg["styleshot_model_path"], "pretrained_weight/style_aware_encoder.bin"
     )
 
-    pipe = StableDiffusionPipeline.from_pretrained(cfg["base_model_path"]).to(device)
+    pipe = StableDiffusionPipeline.from_pretrained(cfg["base_model_path"]).to(device, dtype=torch.float16)
     pipe.set_progress_bar_config(disable=False)
 
     styleshot = StyleShot(
         device=device,
-        sd_pipe=pipe,
+        pipe=pipe,
         ip_ckpt=ip_ckpt,
-        style_aware_encoder_path=style_aware_encoder_path,
-        transformer_block_path=cfg["transformer_block_path"],
+        style_aware_encoder_ckpt=style_aware_encoder_path,
+        transformer_patch=cfg["transformer_block_path"],
         num_inference_steps=cfg["num_inference_steps"],
         attn_svd=h["attn_svd"],
         attn_cfg=h["attn_cfg"],
